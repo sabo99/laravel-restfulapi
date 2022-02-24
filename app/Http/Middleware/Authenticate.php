@@ -23,10 +23,10 @@ class Authenticate extends Middleware
 
     public function handle($request, Closure $next, ...$guards)
     {
-        if ($request->header('Accept') != 'application/json')
-            return response()->json([
-                'message' => 'Accept Headers Required.'
-            ], 400);
+        // if ($request->header('Accept') != 'application/json')
+        //     return response()->json([
+        //         'message' => 'Accept Headers Required.'
+        //     ], 400);
 
         /** ONLY Auth Login not check Middleware Sanctum */
         if ($request->bearerToken() == null)

@@ -13,14 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('role_id');
-            $table->foreign('role_id')->references('id')->on('roles');
-            $table->string('username')->unique();
-            $table->string('email')->unique();
-            $table->timestamp('last_actived_at')->nullable();
-            $table->string('password');
+            $table->foreignId('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreignId('post_id');
+            $table->foreign('post_id')->references('id')->on('posts');
+            $table->text('message');
             $table->enum('status', [0, 1])->default(1);
             $table->timestamps();
         });
@@ -33,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('comments');
     }
 };

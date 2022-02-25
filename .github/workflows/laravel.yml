@@ -33,3 +33,7 @@ jobs:
           DB_USERNAME: u1778269_laravel
           DB_PASSWORD: u1778269_laravel_147369
         run: vendor/bin/phpunit
+      - name: Database migration
+        run: |
+          php artisan migrate:fresh
+          php artisan db:seed

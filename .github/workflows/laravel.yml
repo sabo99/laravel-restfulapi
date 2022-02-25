@@ -37,6 +37,6 @@ jobs:
           DB_PORT: 3306
           DB_DATABASE: u1778269_laravel_restfulapi
           DB_USERNAME: u1778269_laravel
-          DB_PASSWORD: base64:=u1778269_laravel_147369
+          DB_PASSWORD: u1778269_laravel_147369
       - name: Migration database
         run: php artisan migrate:fresh --seed

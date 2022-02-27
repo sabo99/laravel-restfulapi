@@ -9,6 +9,12 @@
 
 <br><hr><br>
 
+## 🚀 API Documentation
+
+-   [View Documentation](https://app.swaggerhub.com/apis-docs/sabo99/LaravelRESTfulAPI/1.0#/)
+
+<br>
+
 ## 🚀 Quick start (Clone Project)
 
 1.  **First Clone Project**
@@ -34,10 +40,6 @@
 4.  **Learn more**
 
     -   [Laravel Documentation](https://laravel.com/docs/9.x/)
-
-## 🚀 API Documentation
-
-[View Documentation](https://app.swaggerhub.com/apis-docs/sabo99/LaravelRESTfulAPI/1.0#/)
 
 ## License
 

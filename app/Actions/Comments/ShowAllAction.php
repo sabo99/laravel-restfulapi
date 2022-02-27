@@ -34,8 +34,8 @@ class ShowAllAction
             return HandlerResponse::responseJSON([
                 'data' => $comment,
                 'meta' => [
-                    'limit'          => $limit,
-                    'offset'         => $offset,
+                    'limit'          => (int) $limit,
+                    'offset'         => (int) $offset,
                     'filtered_total' => $comment->count(),
                     'total'          => Comment::where('user_id', 'LIKE', $author_id)->where('post_id', 'LIKE', $post_id)->count()
                 ]

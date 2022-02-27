@@ -7,9 +7,13 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-<h1 align="center" style="margin-top:2em;">
-  Laravel minimal starter
-</h1>
+<br><hr><br>
+
+## 🚀 API Documentation
+
+-   [View Documentation](https://app.swaggerhub.com/apis-docs/sabo99/LaravelRESTfulAPI/1.0#/)
+
+<br>
 
 ## 🚀 Quick start (Clone Project)
 
@@ -36,10 +40,6 @@
 4.  **Learn more**
 
     -   [Laravel Documentation](https://laravel.com/docs/9.x/)
-
-## 🚀 API Documentation
-
-[View Documentation](https://app.swaggerhub.com/apis-docs/sabo99/LaravelRESTfulAPI/1.0#/)
 
 ## License
 

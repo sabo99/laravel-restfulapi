@@ -7,9 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-<h1 align="center" style="margin-top:2em;">
-  Laravel minimal starter
-</h1>
+<br><hr><br>
 
 ## 🚀 Quick start (Clone Project)
 

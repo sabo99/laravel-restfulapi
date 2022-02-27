@@ -61,10 +61,14 @@ class HandlerResponse
                 'data'      => $data['data']    ?? [],
                 'meta'      => $data['meta']    ?? [],
             ], $status);
-        else
+        else if ($status >= 400 && $status < 500)
             return response()->json([
                 'message'  => $data['message']  ?? self::getMessage($status),
                 'errors'   => $data['errors']   ?? [],
+            ], $status);
+        else
+            return response()->json([
+                'message'  => $data['message']  ?? self::getMessage($status),
             ], $status);
     }
 }

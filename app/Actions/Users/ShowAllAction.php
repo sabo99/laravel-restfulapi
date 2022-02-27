@@ -26,13 +26,14 @@ class ShowAllAction
             $user = User::limit($limit)
                 ->offset($offset)
                 ->where('id', 'LIKE', $user_id)
-                ->whereBetween('created_at', ["$start_date 00:00:00", "$end_date 23:59:59"]);
+                ->whereBetween('created_at', ["$start_date 00:00:00", "$end_date 23:59:59"])
+                ->get();
 
             return HandlerResponse::responseJSON([
-                'data' => $user->get(),
+                'data' => $user,
                 'meta' => [
-                    'limit'          => $limit,
-                    'offset'         => $offset,
+                    'limit'          => (int) $limit,
+                    'offset'         => (int) $offset,
                     'filtered_total' => $user->count(),
                     'total'          => User::count()
                 ]

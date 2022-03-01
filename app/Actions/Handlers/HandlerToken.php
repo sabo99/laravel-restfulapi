@@ -2,6 +2,7 @@
 
 namespace App\Actions\Handlers;
 
+use App\Models\RoleAbility;
 use App\Models\User;
 
 /**
@@ -18,17 +19,8 @@ class HandlerToken
     public static function generate(User $user)
     {
         $abilities = [];
-
-        switch ($user->role_id) {
-            case 1:
-                array_push($abilities, '*');
-                break;
-            case 2:
-                array_push($abilities, 'auth-logout', 'user-show', 'user-update', 'post-*', 'comment-*');
-                break;
-            default:
-                array_push($abilities, '');
-                break;
+        foreach (RoleAbility::where('role_id', $user->role_id)->get() as $value) {
+            array_push($abilities, $value['abilities']->ability);
         }
 
         return $user->createToken($user->roles()->value('role_name'), $abilities)->plainTextToken;

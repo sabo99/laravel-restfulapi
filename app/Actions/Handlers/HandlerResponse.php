@@ -11,7 +11,7 @@ class HandlerResponse
      * @param int $status
      * @return string $message
      */
-    private static function getMessage(int $status)
+    private static function getMessage($status)
     {
         $message = [
             200 => 'OK.',
@@ -29,8 +29,8 @@ class HandlerResponse
     }
 
     /**
-     * @param  int $status [200, 201, 400, 401, 403, 404, 405, 422, 500]
      * @param  mixed $data 
+     * @param  int $status [200, 201, 400, 401, 403, 404, 405, 422, 500]
      * @return \Illuminate\Http\Response
      */
     public static function responseJSON($data = [], $status = 200)

@@ -14,7 +14,7 @@ class ShowAllRequest extends CustomRequest
     public function authorize()
     {
         $user  = request()->user('sanctum');
-        $check = $user->tokenCan('user-all') || $user->tokenCan('user-*') || $user->tokenCan('*');
+        $check = $user->tokenCan('user-showall') || $user->tokenCan('user-*') || $user->tokenCan('*');
         return $user->status == 1 && $check;
     }
 

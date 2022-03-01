@@ -22,6 +22,8 @@ class DatabaseSeeder extends Seeder
                 UserSeeder::class,
                 PostSeeder::class,
                 CommentSeeder::class,
+                AbilitySeeder::class,
+                RoleAbilitySeeder::class,
             ]);
             DB::commit();
         } catch (\Throwable $th) {

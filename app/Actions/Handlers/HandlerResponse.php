@@ -11,41 +11,21 @@ class HandlerResponse
      * @param int $status
      * @return string $message
      */
-    private static function getMessage($status)
+    private static function getMessage(int $status)
     {
-        $msg = '';
-        switch ($status) {
-            case 200:
-                $msg = 'OK.';
-                break;
-            case 201:
-                $msg = 'Created.';
-                break;
-            case 400:
-                $msg = 'Bad Request.';
-                break;
-            case 401:
-                $msg = 'Unauthenticated.';
-                break;
-            case 403:
-                $msg = 'Forbidden.';
-                break;
-            case 404:
-                $msg = 'Not Found.';
-                break;
-            case 405:
-                $msg = 'Method Not Allowed.';
-                break;
-            case 422:
-                $msg = 'Validation Errors.';
-                break;
-            case 500:
-                $msg = 'Internal Server Error.';
-                break;
-            default:
-                break;
-        }
-        return $msg;
+        $message = [
+            200 => 'OK.',
+            201 => 'Created.',
+            400 => 'Bad Request.',
+            401 => 'Unauthenticated.',
+            403 => 'Forbidden.',
+            404 => 'Not Found.',
+            405 => 'Method Not Allowed.',
+            422 => 'Validation Errors.',
+            500 => 'Internal Server Error.',
+        ];
+
+        return $message[$status];
     }
 
     /**

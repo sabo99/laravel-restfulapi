@@ -28,8 +28,14 @@
     ```shell
     composer install
     ```
+3.  **Config Environment**
 
-3.  **Ready to launch on local server**
+    Copy `.env.example` to new file `.env`
+    ```shell
+    cp .env.example .env
+    ```
+
+4.  **Ready to launch on local server**
 
     ```shell
     php artisan serve
@@ -37,7 +43,7 @@
 
     Your site is now running at http://127.0.0.1:8000
 
-4.  **Learn more**
+5.  **Learn more**
 
     -   [Laravel Documentation](https://laravel.com/docs/9.x/)
 

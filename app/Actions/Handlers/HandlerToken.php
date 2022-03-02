@@ -19,8 +19,9 @@ class HandlerToken
     public static function generate(User $user)
     {
         $abilities = [];
-        foreach (RoleAbility::where('role_id', $user->role_id)->get() as $value) {
-            array_push($abilities, $value['abilities']->ability);
+        $role_abilities = RoleAbility::where('role_id', $user->role_id)->get()->pluck('abilities');
+        foreach ($role_abilities as $value) {
+            array_push($abilities, $value->ability);
         }
 
         return $user->createToken($user->roles()->value('role_name'), $abilities)->plainTextToken;

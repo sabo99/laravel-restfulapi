@@ -12,6 +12,7 @@ class RoleAbility extends Model
     protected $table    = 'role_abilities';
     protected $guarded  = [];
     protected $hidden   = ['created_at', 'updated_at'];
+    protected $with     = ['abilities'];
 
     public function role()
     {

@@ -30,14 +30,10 @@ class Authenticate extends Middleware
 
         /** ONLY Auth Login not check Middleware Sanctum */
         if ($request->bearerToken() == null)
-            return response()->json([
-                'message' => 'Unauthenticated.'
-            ], 401);
+            return abort(401, 'Unauthenticated');
 
         if (!auth('sanctum')->check())
-            return response()->json([
-                'message' => 'Token Expired.'
-            ], 403);
+            return abort(403);
 
         return $next($request);
     }
